@@ -29,10 +29,19 @@ function App() {
   if (loading) return 'Loading...';
   if (error)
     return 'Error while fetching data check the link endpoint or your code ';
-  return;
-  <div className="App">
-    <h1>heelo</h1>
-  </div>;
+  return (
+    <div className="App">
+      {data && (
+        <div>
+          {data.map((items) => (
+            <div key={items.id}>
+              <img src={items.url} alt="random" />
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default App;
