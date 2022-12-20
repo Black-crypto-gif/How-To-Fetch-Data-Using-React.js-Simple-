@@ -7,7 +7,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/photos')
+    fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -35,7 +35,7 @@ function App() {
         <div>
           {data.map((items) => (
             <div key={items.id}>
-              <img src={items.url} alt="random" />
+              <h3>{items.name}</h3>
             </div>
           ))}
         </div>
